@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>智能拼图·改</title>
+        <style type="text/css">
+            .container {
+                text-align: center;
+            }
+            .main {
+                width: 100px;
+                height: 100px;
+                display: inline-block;
+                float: left;
+            }
+            .unit{
+                display: inline-block;
+                width:300px;
+                height:300px;
+            }
+        </style>
+    </head>
+    <body onkeyup="key_act(event)" onload="load_date()">
+        <h1 class="container">稍微改进了的智能拼图</h1>
+        <p class="container">可以按wasd移动格子</p>
+        <p id="g_s" style="color:red;text-align: center;">游戏未开始</p>
+        <div class="container">
+            <div class="unit">
+                <div class="main" id="11" onclick="act(11)" style="background-image:url(img/f-0.jpg) "></div>
+                <div class="main" id="12" onclick="act(12)" style="background-image:url(img/f-1.jpg) "></div>
+                <div class="main" id="13" onclick="act(13)" style="background-image:url(img/f-2.jpg) "></div>
+                <div class="main" id="21" onclick="act(21)" style="background-image:url(img/f-3.jpg) "></div>
+                <div class="main" id="22" onclick="act(22)" style="background-image:url(img/f-4.jpg) "></div>
+                <div class="main" id="23" onclick="act(23)" style="background-image:url(img/f-5.jpg) "></div>
+                <div class="main" id="31" onclick="act(31)" style="background-image:url(img/f-6.jpg) "></div>
+                <div class="main" id="32" onclick="act(32)" style="background-image:url(img/f-7.jpg) "></div>
+                <div class="main" id="33" onclick="act(33)" style="background-image:url(img/f-8.jpg) "></div>
+            </div>
+        </div>
+        <p align="lift">所用时间：<a id="time_num">00：00</a></p>
+        <p align="right">已用步数：<a id="step_num">0</a></p>
+        <div class="container">
+            <button type="button" onclick="start()">开始</button>
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" onclick="finish()">一键完成</button>
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" onclick="save()">保存</button>
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" onclick="load_a()">读取进度</button>
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" onclick="localStorage.clear();load_date();finish()">删除进度</button>
+        </div>
+        <p class="container">上次保存时间:<a id="save_date"></a></p>
+        <script src="act.js"></script>
+        <script type="text/javascript">
+            var element = /<(\S+?)[^>]*>[\s\S]*?(?=<\/\1\s*?>)|<[^<>\s]+?\s*?\/>/g;
+            var all = "";
+            function search(arr){
+                for (var i = 0; i <= arr.length - 1; i++) {
+                    element.lastIndex = 0;
+                    if (element.test(arr[i])) {
+                        element.lastIndex = 0;
+                        if (arr[i].match(element)[0] == arr[i]) {
+                            all = all + "\n" + arr[i];
+                        }else{
+                            element.lastIndex = 0;
+                            search(arr[i].match(element));
+                        }
+                    }else{
+                        all = all + "\n" + arr[i];
+                    }
+                }
+            };
+            var body = document.getElementsByTagName("body")[0].innerHTML;
+            console.log(body);
+            search(body.match(element));
+            console.log(all);
+            //这正则有毒 我不玩了（逃
+        </script>
+    </body>
+</html>
