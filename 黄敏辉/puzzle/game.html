@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>智能拼图·改</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body onkeyup="keyAct(event)" onload="loadDate()">
+        <h1 class="container">稍微改进了的智能拼图</h1>
+        <p class="container">可以按wasd移动格子</p>
+        <p id="state" style="color: red;text-align: center;">游戏未开始</p>
+        <div class="container">
+            <div class="main" id="main">
+                <div class="unit" id="11" onclick="act(11)" style="background-image:url(img/f-0.jpg) "></div>
+                <div class="unit" id="12" onclick="act(12)" style="background-image:url(img/f-1.jpg) "></div>
+                <div class="unit" id="13" onclick="act(13)" style="background-image:url(img/f-2.jpg) "></div>
+                <div class="unit" id="21" onclick="act(21)" style="background-image:url(img/f-3.jpg) "></div>
+                <div class="unit" id="22" onclick="act(22)" style="background-image:url(img/f-4.jpg) "></div>
+                <div class="unit" id="23" onclick="act(23)" style="background-image:url(img/f-5.jpg) "></div>
+                <div class="unit" id="31" onclick="act(31)" style="background-image:url(img/f-6.jpg) "></div>
+                <div class="unit" id="32" onclick="act(32)" style="background-image:url(img/f-7.jpg) "></div>
+                <div class="unit" id="33" onclick="act(33)" style="background-image:url(img/f-8.jpg) "></div>
+            </div>
+        </div>
+        <p align="lift">所用时间：<a id="timeNum">00：00</a></p>
+        <p align="right">已用步数：<a id="stepNum">0</a></p>
+        <div class="container">
+            <button type="button" onclick="start()">开始</button>
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" onclick="finish()">一键完成</button>
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" onclick="save()">保存</button>
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" onclick="loadData()">读取进度</button>
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" onclick="localStorage.clear();loadDate();finish()">删除进度</button>
+        </div>
+        <p class="container">上次保存时间:<a id="saveDate"></a></p>
+        <script src="act.js"></script>
+    </body>
+</html>

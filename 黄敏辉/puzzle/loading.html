@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>loading</title>
+        <style type="text/css">
+            #loading{
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: gray;
+                z-index: 10;
+            }
+            #progress{
+                width: 70px;
+                height: 70px;
+                display: block;
+                position: absolute;
+                top: calc(50% - 35px);
+                left: calc(50% - 35px);
+                /*transform: translate(-50%, -50%);*/
+                text-align: center;
+                line-height:70px;
+                z-index: 12;
+            }
+            #anime{
+                display: block;
+                position: absolute;
+                width: 70px;
+                height: 70px;
+                top: calc(50% - 35px);
+                left: calc(50% - 35px);
+                z-index: 11;
+                border-radius: 50%;
+                background-color: ;
+                animation: circle 5s infinite;
+            }
+            @keyframes circle{
+                20%{transform: rotate(0deg);}
+                100%{transform: rotate(360deg);}
+            }
+            .point{
+                position: relative;
+                top: 50%;
+                background-color: white;
+                height: 6px;
+                width: 6px;
+                border-radius: 3px;
+            }
+        </style>
+        <script src="jquery-3.2.1.js"></script>
+    </head>
+    <body>
+        <div id="loading">
+            <div id="anime" style="animation-delay: -1s;"><div class="point" style="opacity: 1;"></div></div>
+            <div id="anime" style="animation-delay: -0.75s"><div class="point" style="opacity: 0.8;"></div></div>
+            <div id="anime" style="animation-delay: -0.5s"><div class="point" style="opacity: 0.6;"></div></div>
+            <div id="anime" style="animation-delay: -0.25s"><div class="point" style="opacity: 0.4;"></div></div>
+            <div id="anime" style=""><div class="point" style="opacity: 0.2;"></div></div>
+            <div id="progress" style="font-size: 7px;">百分比是假的</div>
+        </div>
+        <script>
+            var $loading=$('#loading');
+            var $progress=$('#progress');
+            window.onload=function()
+            {
+                // $("#loading").fadeOut();
+            };
+        </script>
+    </body>
+</html>

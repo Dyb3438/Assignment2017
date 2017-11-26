@@ -1,0 +1,24 @@
+@keyframes leftSlide{
+    from {left: -50%; opacity: 0;}
+    to {left: 0; opacity: 1;}
+}
+@keyframes rightSlide{
+    from {right: -50%; opacity: 0;}
+    to {right: 0; opacity: 1;}
+}
+@keyframes topSlide{
+    from {top: -100px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+@keyframes overflow{
+    from {overflow-x: hidden;}
+    to {overflow-x: auto;}
+}
+@keyframes fadeOut{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeIn{
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

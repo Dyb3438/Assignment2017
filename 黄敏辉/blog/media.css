@@ -1,0 +1,96 @@
+@media screen and (min-width: 970px) {
+    #container{
+        margin-left: 150px;
+        margin-right: 150px;
+        padding-bottom: 10px;
+    }
+    #menuButton{
+        display: none;
+    }
+    #kanbanButton{
+        display: none;
+    }
+}
+@media screen and (max-width: 970px) and (min-width: 690px){
+    #menuButton{
+        display: none;
+    }
+    #kanbanButton{
+        display: none;
+    }
+}
+@media screen and (max-width: 690px) and (min-width: 355px){
+    #body{
+        width: auto;
+    }
+    .rightBody{
+        /*display: none;*/
+        width: calc(100% - 20px);
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    ul#menu{
+        position: absolute;
+        /*display: block;*/
+        margin: 0;
+        float: right;
+        top: 100px;
+        z-index: 1;
+        width: 99%;
+        display: none;
+        /*opacity: 0;*/
+        transition: 0.3s;
+    }
+    #menu>li{
+        width: 100%;
+        background-color: #6be;
+        border: 1px solid white;
+    }
+    #kanban{
+        display: none;
+    }
+    #dialog{
+        display: none;
+    }
+}
+@media screen and (max-width: 355px){
+    #head>a{
+        margin-left: 10px;
+    }
+    #container{
+        margin: 0;
+    }
+    #body{
+        padding: 10px;
+        width: auto;
+    }
+    .rightBody{
+        /*display: none;*/
+        width: calc(100% - 20px);
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    ul#menu{
+        position: absolute;
+        /*display: block;*/
+        margin: 0;
+        float: right;
+        top: 100px;
+        z-index: 1;
+        width: 99%;
+        display: none;
+        /*opacity: 0;*/
+        transition: 0.3s;
+    }
+    #menu>li{
+        width: 100%;
+        background-color: #6be;
+        border: 1px solid white;
+    }
+    #kanban{
+        display: none;
+    }
+    #dialog{
+        display: none;
+    }
+}
