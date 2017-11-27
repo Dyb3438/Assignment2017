@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>零</title>
+	<meta name="viewport" content="width=1200, height=1600, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="blog-css.css">
+
+</head>
+<body style="background: black;">
+	<div style="position: absolute;z-index: -2;left: 50%;height: 1800px;width: 1440px;margin-left: -720px;background: url(background.jpg) repeat-y;">
+	
+		<div class="title" style="animation: appear 4s;">零の博客</div>
+		<div class="guide" style="animation: appear 4s;">
+			<div style="margin-top: 1%;margin-left: -10%;width: 100%;">
+			    <div class="div-rotate changeCss" >
+			      <div class="backgroundStyle"></div>
+			      <div class="textStyle">花式首页</div>
+			      <div class="clickStyle" ><a href="blog-mainPage.html" class="lineCss"></a></div>
+			    </div>
+			    <div class="div-rotate changeCss" >
+			      <div class="backgroundStyle"></div>
+			      <div class="textStyle">仍是首页</div>
+			      <div class="clickStyle" ><a href="blog-mainPage.html" class="lineCss"></a></div>
+			    </div>
+			    <div class="div-rotate changeCss" >
+			      <div class="backgroundStyle"></div>
+			      <div class="textStyle">关于我</div>
+			      <div class="clickStyle" ><a href="blog-mainSelf.html" class="lineCss"></a></div>
+			    </div>
+			    <div class="div-rotate changeCss" >
+			      <div class="backgroundStyle"></div>
+			      <div class="textStyle">首页</div>
+			      <div class="clickStyle" ><a href="blog-mainPage.html" class="lineCss"></a></div>
+			    </div>
+			</div>
+		</div>
+
+		<div class="body" style="animation: appearbodySt 0.8s;margin-top: -475px;">
+			<strong style="font-size: 40px;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一则</strong>
+			<p>&nbsp;_____________________________________________________________________</p>
+			<p>&nbsp;_____________________________________________________________________</p>
+		</div>
+
+		<div class="body" style="animation: appearbodyNd 1.6s;margin-top: -225px;">
+			<strong style="font-size: 40px;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二则</strong>
+			<p>&nbsp;_____________________________________________________________________</p>
+			<p>&nbsp;_____________________________________________________________________</p>
+		</div>
+
+		<div class="body" style="animation: appearbodySt 0.8s;margin-top: 25px;">
+			<strong style="font-size: 40px;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第三则</strong>
+			<p>&nbsp;_____________________________________________________________________</p>
+			<p>&nbsp;_____________________________________________________________________</p>
+		</div>
+
+		<div class="body" style="animation: appearbodyNd 1.6s;margin-top: 275px;">
+			<strong style="font-size: 40px;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第四则</strong>
+			<p>&nbsp;_____________________________________________________________________</p>
+			<p>&nbsp;_____________________________________________________________________</p>
+		</div>
+
+		<div class="self" style="animation: appear 4s">
+			<div class="selfIn" style="margin-top: 10px;font-family: '微软雅黑';font-size: 40px;color: pink;border: none;width: 100%;
+			text-align: center;margin-left: 0px;left: 0%;">
+				<strong>个人资料</strong></div>
+			<img src="selfPhoto.png" class="selfIn">
+			<div class="selfIn" style="margin-top: 510px;font-family: '微软雅黑';font-size: 25px;color: pink;border: none;">博客等级：0</div>
+			<div class="selfIn" style="margin-top: 550px;font-family: '微软雅黑';font-size: 25px;color: pink;border: none;">博客积分：0</div>
+			<div class="selfIn" style="margin-top: 590px;font-family: '微软雅黑';font-size: 25px;color: pink;border: none;">博客访问：0</div>
+			<div class="selfIn" style="margin-top: 630px;font-family: '微软雅黑';font-size: 25px;color: pink;border: none;">关注人气：0</div>
+			<div class="message" onclick="addMessage()">
+				<strong style="font-size: 40px;">
+					&nbsp;留言</strong>
+				<br><span id="leave1">&nbsp;&nbsp;1、__________</span><br>
+				<br><span id="leave2">&nbsp;&nbsp;2、__________</span><br>
+				<br><span id="leave3">&nbsp;&nbsp;3、__________</span><br>
+				<br><span id="leave4">&nbsp;&nbsp;4、__________</span><br>
+				<br>&nbsp;&nbsp;(点击添加留言)<br>
+			</div>
+		</div>
+
+		<div id="boardgrilSystem" class="boardgrilSystemCss" style="top:15%;">
+			<img src="boardgril.png">
+			<div style="position: absolute;width: 150px;height: 450px;left: 50%;top: 60%;margin-left: -75px;margin-top: -300px;" onclick="dailyMsClick();"></div>
+			<div id="dailyMs" class="MsFrame"></div>
+
+		</div>
+		<div id="pointButtonId" class="pointButton" onclick="showOrHide();" style="top:90%;"></div>
+
+		
+
+
+
+
+
+	</div>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+
+$('#dailyMs').fadeOut(10);
+
+for (var i = 1; i < 5; i++) {
+
+	if (localStorage.getItem("boxMsLeave"+i)==null) {
+		document.getElementById("leave"+i).innerHTML="&nbsp;&nbsp;"+i+"、__________";
+	}
+	else{
+		document.getElementById("leave"+i).innerHTML=localStorage.getItem("boxMsLeave"+i);
+	}
+
+}
+function addMessage() {
+
+				 var messageAdd;
+				 var messageId;
+				 messageId =prompt("你想在第几条留言(只输入一位数字)，会覆盖之前的留言");
+				 messageAdd =prompt("请输入你的留言");
+
+			if (messageAdd ==null||messageId ==null||document.getElementById("leave"+messageId)==null){
+				 alert('耍我？你真留言了？你选了编号了？你选的编号是1到4？');
+ 			}
+		 	else{
+		 			$('#leave'+messageId).fadeOut(1000);//我就用这个吧·-·暂时别的地方用JQ
+
+		 			document.getElementById("leave"+messageId).innerHTML="&nbsp;&nbsp;"+messageId+"、"+messageAdd;	
+		 			localStorage.setItem("boxMsLeave1",document.getElementById('leave1').innerHTML);
+    				localStorage.setItem("boxMsLeave2",document.getElementById('leave2').innerHTML);
+    				localStorage.setItem("boxMsLeave3",document.getElementById('leave3').innerHTML);
+    				localStorage.setItem("boxMsLeave4",document.getElementById('leave4').innerHTML);
+
+    				$('#leave'+messageId).fadeIn(1000);
+ 				}
+
+}
+
+	
+
+	var dailyMsArray=new Array();
+		dailyMsArray[0]="哦哈哟，<br>来看我的吗-v-"
+		dailyMsArray[1]="别盯着我啦·-·，<br>我不会动的"
+		dailyMsArray[2]="master比较懒-。-，<br>我只会说这几句啦"
+		dailyMsArray[3]="别吐槽master博客，<br>虽然做的不怎么样"
+		dailyMsArray[4]="我不会告诉你的，<br>下面有小圆隐藏我"
+	var dailyMsTinmer=window.setInterval(function(){dailyMsIn()},18000)
+	function dailyMsIn(){
+		if (judgeForHappen==true) {
+
+					var num=Math.floor(Math.random()*5);
+					document.getElementById('dailyMs').innerHTML=dailyMsArray[num];
+					$('#dailyMs').fadeIn(1000);
+
+					var dailyMsTinmerOut=window.setTimeout(function(){dailyMsOut()},4000)
+				function dailyMsOut(){
+
+					$('#dailyMs').fadeOut(1000);	
+					}
+			}
+		}
+	function dailyMsClick(){
+
+			clickFrequency();
+			judgeForHappen=false;
+			document.getElementById('dailyMs').innerHTML="别摸我了，<br>master~";
+			$('#dailyMs').fadeIn(1000);
+
+			var dailyMsTinmerOut=window.setTimeout(function(){dailyMsOut()},2000)
+		function dailyMsOut(){
+
+			$('#dailyMs').fadeOut(1000);
+			judgeForHappen=true;
+
+		}
+	}
+
+
+
+      var judgeForClick1=new Boolean(true);
+      var judgeForClick2;
+      var judgeForHappen=new Boolean(true);
+
+
+  function clickFrequency()
+  {
+    function timerForOnce()
+    {
+      judgeForClick1=true;
+    }
+    if (judgeForClick1==true)
+    {
+      setTimeout(function(){timerForOnce()},800);
+    }
+    else
+    {
+      alert("你点那么快做啥啊·-·变态");
+    }
+
+
+    judgeForClick2=judgeForClick1;
+    judgeForClick1=false;
+
+//降低点击频率
+  }
+
+var judgeforShowOrHide=0
+function showOrHide(){
+
+	clickFrequency();
+	judgeforShowOrHide=judgeforShowOrHide+1;
+	judgeForHappen=false;
+	if (judgeforShowOrHide%2==1) {
+		$('#boardgrilSystem').fadeOut(2000);
+
+	}
+	else{
+		$('#boardgrilSystem').fadeIn(2000);
+	}
+	var dailyMsOrNot=window.setTimeout(function(){dailyMsOk()},2000)
+	function dailyMsOk(){
+
+		judgeForHappen=true;
+	}
+
+
+}
+
+
+</script>
+</body>
+</html>

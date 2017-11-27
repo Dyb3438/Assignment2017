@@ -1,0 +1,276 @@
+.title{
+
+	height: 100px;
+	width: 60%;
+	left: 20%;
+	top: 7%;
+	position: absolute;
+	text-align: center;
+	line-height: 100px;
+	font-size: 50px;
+	box-shadow: 10px 10px 5px #000;
+	border-radius: 5px;
+	background: linear-gradient(to left,#0000c6,#00ffff);
+	color:pink;
+	z-index: 1;
+	font-family: "微软雅黑";
+
+
+
+}
+
+.body{
+
+	height: 200px;
+	width: 50%;
+	position: absolute;
+	left: 20%;
+	top: 45%;
+	font-size: 20px;
+	box-shadow: 10px 10px 5px #000;
+	border-radius: 5px;
+	background: linear-gradient(to left,#00ffff,#caffff);
+	color:black;
+	font-family: "微软雅黑";
+	transition: visibility 0.5s;
+
+}
+
+.bodySelf{
+
+	height: 900px;
+	width: 50%;
+	position: absolute;
+	left: 20%;
+	top: 45%;
+	font-size: 20px;
+	box-shadow: 10px 10px 5px #000;
+	border-radius: 5px;
+	background: linear-gradient(to left,#00ffff,#caffff);
+	color:black;
+	font-family: "微软雅黑";
+	transition: visibility 0.5s;
+
+}
+
+.guide{
+
+	height: 50px;
+	width: 60%;
+	left: 20%;
+	margin-top: 18%;
+	position: absolute;
+	font-family: "微软雅黑";
+
+}
+
+.lineCss{
+
+	position: absolute;
+	width: 25%;
+	left: 15%;
+	font-size: 25px;
+	color: pink;
+	height: 100%;
+	width: 100%;
+	line-height: 50px;
+	font-family: "微软雅黑";
+}
+
+.self{
+
+	position: absolute;
+	width: 20%;
+	height: 60%;
+	top: 14.5%;
+	left: 75%;
+	box-shadow: 10px 10px 5px #000;
+	border-radius: 5px;
+	background: linear-gradient(to left,#00ffff,#0000c6);
+	z-index: 1
+
+}
+.selfIn{
+
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: 80px;
+	border: 5px solid#000;
+
+}
+
+.message{
+
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	border: 5px solid#000;
+	margin-top: 670px;
+	font-family: '微软雅黑';
+	font-size: 25px;
+	height: 350px;
+	width: 200px;
+	background: white;
+	overflow:auto;
+
+}
+
+  .changeCss:hover .backgroundStyle{
+    box-shadow: 0 20px 20px 0 rgba(0,0,0,0.24), 0 50px 50px 0 rgba(0,0,0,0.19);
+  }
+  .changeCss:hover .backgroundStyle{
+    background: blue;
+    transform:rotate(180deg);
+    border: 5px solid#000;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+  }
+  .changeCss:hover .textStyle{
+    color: #fff;
+    transform:rotate(315deg);
+    line-height: 52.5px;
+  }
+  .backgroundStyle{
+    left: 50%;
+    height: 50%;
+    margin-left: -50px;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    transition: background 1s;
+    transition:  transform 0.5s;
+    opacity:0.6;
+    filter:alpha(opacity=60);
+    transition: filter 1s;
+    transition: border 1s;
+
+  }
+  .clickStyle{
+    left: 50%;
+    height: 50%;
+    margin-left: -50px;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border:none;
+
+  }
+  .div-rotate{
+    transition: box-shadow 1s;
+    height: 60px;
+    width: 60px;
+    transform:rotate(45deg);
+    float: right;
+    margin-left: 18%;
+
+
+
+  }
+
+  .textStyle{
+    position: absolute;
+    transform:rotate(-45deg);
+    top: 50%;left: 50%;
+    margin-top:-20px;
+    margin-left:-50px;
+    font-size: 15px;
+    height: 40px;
+    width: 60px;
+    line-height:37.5px;
+    text-align: center;
+    transition: color 1s;
+    transition: transform 0.5s;
+    font-family: "微软雅黑";
+    font-weight:bold;
+
+  }
+
+  .MsFrame{
+
+  	width: 200px;
+  	height: 100px;
+  	position: absolute;
+  	top: 0%;
+  	left: 65%;
+  	border-radius: 5px;
+  	z-index: 200;
+  	color: blue;
+  	font-size: 20px;
+  	text-align: center;
+  	line-height: 40px;
+  	font-weight: bold;
+  	box-shadow: 0 20px 20px 0 rgba(0,0,0,0.24), 0 50px 50px 0 rgba(0,0,0,0.19);
+  	background:  linear-gradient(to left,#acd6ff,#fff);
+
+
+  }
+
+  .pointButton{
+
+  	position: fixed;
+  	left: 10%;
+  	width: 80px;
+  	height: 80px;
+  	border-radius: 100%;
+  	background: radial-gradient(#fff 10%,#acd6ff 30%,blue 90%);
+  	z-index: 200;
+  	animation: appear 2s;
+
+  }
+
+  .boardgrilSystemCss{
+
+  	position: fixed;
+  	z-index: 1;
+  	left: 3%;
+  	animation: appearBoardGril 3s;
+  }
+
+
+  p{
+  	
+   	text-align: center;
+  }
+
+@keyframes appear{
+
+		from{opacity:0;filter:alpha(opacity=0);}
+		to{opacity:1;filter:alpha(opacity=100);}
+
+	}
+
+@keyframes appearBoardGril{
+
+		0%{transform: rotate(20deg);left: -65%;}
+		10%{transform: rotate(20deg);left: -12%;}
+		40%{transform: rotate(30deg);left: -12%;}
+		70%{transform: rotate(0deg);left: -15%;}
+		100%{transform: rotate(0deg);left: 3%;}
+	}
+
+@keyframes appearbodySt{
+
+		0% {left: 50%;visibility: hidden;}
+		20% {left: 50%;visibility: hidden;}
+		100% {left: 20%;visibility: visible;}
+
+	}
+
+@keyframes appearbodyNd{
+
+		0% {left: 50%;visibility: hidden;}
+		60% {left: 50%;visibility: hidden;}
+		100% {left: 20%;visibility: visible;}
+
+	}
+
+@keyframes appearbodySelf{
+
+		0% {top: 80%;visibility: hidden;}
+		20% {top: 80%;visibility: hidden;}
+		100% {top: 45%;visibility: visible;}
+
+	}
+
