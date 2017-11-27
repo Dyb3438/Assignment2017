@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="">
+        <style type="text/css"></style>
+    </head>
+    <body>
+        1
+        < br/>
+        1
+        <br />
+        2
+        < a>这没用</ a>
+        <a>这好像有用？</ a>
+        <!-- 有点迷 -->
+        <a >这也行</a >
+        <script>
+            var strA = "随便 什么字 都可以是吧 从这里会被分开";
+            var a = /[\u4e00-\u9fa5]{2,5}/g;
+            //匹配2~5个中文
+            console.log(strA.match(a));
+
+            console.log("这里开始是b");
+            var strB = "015425496215 13476953218 19548546325";
+            var b = /0?(13|15|18)[0-9]{9}/g;
+            var b2 = /0?(13|15|18)[0-9]{9}/;
+            //匹配可能有0开头的 13或15或18后接9位随便什么数字的（手机号码？）
+            console.log(strB.match(b));
+            console.log(strB.match(b2));
+            console.log("有点神奇");
+            //match与exec。。。
+
+            console.log("这里开始是c");
+            var strC = "74854891544862486x 148621694248547628 146234951354821 6942158743594125889";
+            var c = /\d{17}[\d|x]|\d{15}/g;
+            var c2 = /\d{15}|\d{17}[\d|x]/g;
+            //匹配17位数字加1位数字或x 或15位数字（身份证？）
+            console.log(strC.match(c));
+            //最后优先匹配18位数字？
+            console.log(strC.match(c2));
+            //这样就优先匹配15位数字了。。。
+
+            console.log("这里开始是d");
+            var strD = "154 01578954 157469845 2548512345679 3547894874891458769";
+            var d = /[1-9]([0-9]{5,11})/g;
+            //匹配非零数字开头的6到12位数字
+            console.log(strD.match(d));
+            //优先往最长的配 多余的再配。。。
+
+            console.log("这里开始是e");
+            var strE = "192.168.1.1 192.168.0.1 255.255.255.0 0.0.0.0";
+            var e = /(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)/g;
+            //这大概是个IP地址
+            console.log(strE.match(e));
+
+            console.log("这里开始是f");
+            var strF = "Be2_呵呵 额 eabk _ - 5ds_啥";
+            // var f = /[A-Za-z0-9_\-\u4e00-\u9fa5]+/g;
+            //大写字母 小写字母 数字 下划线_ 中文？啥玩意？
+            var f = /[A-Za-z0-9]+_[\u4e00-\u9fa5]+/g;
+            //大概是想这样？ 字母或数字+下划线+中文？
+            console.log(strF.match(f));
+
+            console.log("这里开始是g");
+            var strG = "<h > >>> > > a </>  <br/> <a href = ''>什么乱七八糟的</a> < a>真的骚</a> < /> <</> < a>反正这种代码也没用</ a> <br /> <a >这也骚</a > <a>各种骚操作</a >";
+            var strG2 = "<h2>各种实验 <h > >>> > > a </>  <br/> <a href = ''>什么乱七八糟的</a> < a>真的骚</a> < /> <</> < a>反正这种代码也没用</ a> <br /> <a >这也骚</a > <a>各种骚操作</a > </h2 >";
+            // var g = /<(\S*?)[^>]*>.*?</>|<.*? />/g;
+            // var g = /<(\S*?)[^>]*>.*?<\/\1>|<[^<>]*?\/>/g;
+            var g = /<(\S+?)[^>]*>[\s\S]*?<\/\1\s*?>|<[^<>\s]+?\s*?\/>/g;
+            //这应该就能匹配所有有效的HTML元素了吧。。。（大概不会用到这样的匹配吧。。。）
+            var g2 = /<(\S+?)[^>]*>.*?<\/\1>|<(\S+?).*? \/>/g;
+            //405的？
+            console.log(strG.match(g));
+            console.log(strG2.match(g));
+            console.log(strG.match(g2));
+            console.log(g.exec(strG2));
+            //妈耶 有毒
+
+            console.log("这里开始是h");
+            var strH = "F8-DA-0C-66-E2-C5 F8:DA:0C:66:E2:C5 15434";
+            var h = /[0-9a-fA-F]{2}([:|-][0-9a-fA-F]{2}){5}/g;
+            //这大概是想匹配个mac地址？
+            console.log(strH.match(h));
+
+            console.log("这里开始是i");
+            var strI = "apple Path hikari_Hui abcdefghij12345678 abcedf";
+            var arrI = ["apple", "Path", "hikari_Hui", "abcdefghij12345678", "abcedf", "abcdefghij123456789"];
+            var output = [];
+            var strI2 = "hikari_Hui"
+            var i = /^[a-zA-Z]\w{5,17}$/g;
+            var i2 = /^[a-zA-Z]\w{5,17}$/;
+            //字母开头加5到17位单词字符[A-Za-z0-9_]（共6到18位）结尾的玩意。。。
+            var outputLength = 0;
+            for (var length = 0; length <= arrI.length - 1; length++) {
+                if(i2.test(arrI[length])){
+                    output[outputLength] = arrI[length];
+                    outputLength++;
+                }
+            };//匹配数组
+            console.log("免得你看不清，从这里开始");
+            // console.log(strI2.match(i));
+            console.log(i2.test(arrI[3]));
+            // console.log(strI.match(i));
+            i.lastIndex = 0;
+            console.log(i.test(arrI[3]));
+            console.log(i.test(strI2));
+            console.log(i);
+            console.log(i.test(strI2));
+            console.log(i);
+            console.log(i.test(strI2));
+            console.log(strI2.match(i));
+            console.log("这里结束");
+            console.log(output);
+            //妈耶 这个更毒（lastIndex的问题。。。）
+
+            console.log("这里开始是j");
+            var strJ = "1545asdWDSDs7f51";
+            var strJ2 = "153sdFS_x";
+            var strJ3 = "888888888"
+            var strJ4 = "asdA4_111"
+            var strJ5 = "asdA4_"
+            var j =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/g;
+            //这是要匹配一串有数字有大写小写字母的8到10位字符串？用来检验密码？
+            console.log(strJ.match(j));
+            console.log(strJ2.match(j));
+            console.log(strJ3.match(j));
+            console.log(strJ4.match(j));
+            console.log(strJ5.match(j));
+
+            console.log("这里开始是k（最后一个了）")
+            var strK = "78895 5185 0769-85544112 9554157";
+            var strK2 = "0769-85544112"
+            // var k = /(\d{3,4}-)|\d{3.4}-)?\d{7,8}$/g;
+            //又是个错的。。。
+            var k = /(\d{3,4}-)?\d{7,8}$/g;
+            //大概 是想匹配个座机号码？
+            console.log(strK.match(k));
+            console.log(strK2.match(k));
+        </script>
+    </body>
+</html>

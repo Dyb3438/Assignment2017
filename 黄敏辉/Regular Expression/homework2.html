@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="">
+        <style type="text/css"></style>
+    </head>
+    <body>
+        <!-- <iframe src="反熊孩子吧\反熊孩子吧-百度贴吧--什么都被毁掉了！那么这里终将拯救你！--什么你的积木碎了一地？什么你的游戏机不见了什么你MC里的东西毁了 什么？什么谁毁掉了我美好的一切？与熊孩子有不共戴天之仇？那么这里一定适合你.html" id="otherHTML" onload="load()" style="display: none;"></iframe> -->
+        <!-- 本地的被我删了 -->
+       <iframe src="https://tieba.baidu.com/f?kw=%E5%8F%8D%E7%86%8A%E5%AD%A9%E5%AD%90&pn=250" id="otherHTML" onload="load()" style="display: none;"></iframe>
+        <!-- 失败 -->
+        <script>
+            var str1 = "851695673@qq.com hikariHui@outlook.com adfadf@qq.com";
+            var email = /\w+@qq\.com/g;
+            var email2 = /[1-9]([0-9]{5,11})@qq\.com/g;
+            console.log(str1.match(email));
+            console.log(str1.match(email2));
+
+            var str2 = "$200.49 $1,999.00 $99 50.00美元 $1,111,222.00";
+            var dollar = /\$[1-9]\d*(,\d{3})*(\.\d+)*|[1-9]\d*(\.\d+)*美元/g;
+            console.log(str2.match(dollar));
+
+            var str3 = "201730411368 201630214779 201530091128 123456789012";
+            var stuNO = /(200\d|201[0-7]|195[2-9]|19[6-9]\d)\d{8}/g;
+            console.log(str3.match(stuNO));
+            //只知道学号前4位是入学年份 后几位不清楚（应该有含义，然而我查不到）
+
+            function load(){
+                // page = window.frames["otherHTML"].document;
+                var page = document.getElementById("otherHTML").contentDocument.body.innerHTML;
+                // var page = document.getElementById("otherHTML").contentDocument;
+                // var test = "<a class=' card_title_fname' title=''href='/f?kw=%E5%8F%8D%E7%86%8A%E5%AD%A9%E5%AD%90&ie=utf-8'>反熊孩子吧</a>"
+                var title = /(?:<a[^>]*?card_title_fname[^>]*?>)[\s\S]*?(?=<\/a>)/g;
+                var element = /<(\S+?)[^>]*>[\s\S]*?(?=<\/\1\s*?>)|<[^<>\s]+?\s*?\/>/g;
+                console.log(page);
+                console.log(typeof page);
+                console.log(page.match(title));
+                // console.log(page.match(element));
+                // var output;
+                // for (var i = 0; i <= page.match(element).length - 1; i++) {
+                //     output = output + "\n" + page.match(element)[i];
+                // }
+                // console.log(output);
+                var all;
+                function search(arr){
+                    for (var i = 0; i <= arr.length - 1; i++) {
+                        element.lastIndex = 0;
+                        if (element.test(arr[i])) {
+                            element.lastIndex = 0;
+                            if (arr[i].match(element)[0] == arr[i]) {
+                                all = all + "\n" + arr[i];
+                            }else{
+                                element.lastIndex = 0;
+                                search(arr[i].match(element));
+                            }
+                        }else{
+                            all = all + "\n" + arr[i];
+                        }
+                    }
+                };
+                search(page.match(element));
+                console.log(all);
+                //大概 想把最里层的HTML元素抓到（并没有什么卵用）(好像失败了)
+            }
+        </script>
+    </body>
+</html>

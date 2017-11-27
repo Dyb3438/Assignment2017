@@ -1,0 +1,139 @@
+date{
+    font-size: 10px;
+    color: rgb(110, 110, 110);
+    /*float: right;*/
+    /*position: relative;*/
+    display: block;
+    text-align: right;
+}
+body{
+    margin: 0px;
+    background: #e6e6e6;
+    animation: overflow 0.5s;
+}
+a{
+    text-decoration: none;
+}
+div{
+    word-wrap: break-word;
+}
+h1{
+    font-size: 40px;
+    color: rgb(61, 101, 141);
+}
+h2{
+    font-size: 20px;
+    padding: 5px;
+    border-bottom: 1px dashed;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+ul#menu{
+    margin-top: 10px;
+    margin-right: 150px;
+}
+#menu>li{
+    float: left;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+}
+#menu>li>a{
+    color: white;
+    font-family: arial;
+}
+#head>a{
+    font-weight: 400;
+    font-size: 24px;
+    margin-left: 150px;
+    margin-top: 10px;
+    float: left;
+    color: white;
+}
+#container{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.rightBody>p{
+    font-size: 15px;
+    /*border-bottom: 1px */
+}
+.rightBody{
+    float: right;
+    top: 0;
+    position: relative;
+    width: 300px;
+    background: white;
+    padding: 10px;
+    box-shadow: -5px 5px 5px #a7a7a7;
+    margin-bottom: 10px;
+    display: inline;
+    animation: rightSlide 0.3s;
+    animation-timing-function: ease-in-out;
+}
+#head{
+    height: 100px;
+    /*margin-left: 150px;*/
+    /*font-weight: 400px;*/
+    /*font-size: 13px;*/
+    background: linear-gradient(to right, #0df, #06f);
+    position: relative;
+    animation: topSlide 0.3s;
+    animation-timing-function: linear;
+}
+.part{
+    border-bottom: 1px solid;
+}
+#goTop{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+    background: #6be;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    display: none;
+    /*opacity: 0;*/
+    transition: all 0.3s;
+    /*visibility: hidden;*/
+    /*transition: visibility 0.3s;*/
+}
+#body{
+    background: white;
+    padding: 30px;
+    box-shadow: -5px 5px 5px #a7a7a7;
+    float: left;
+    /*margin-right: 330px;*/
+    width: calc(100% - 60px - 320px - 30px);
+    position: relative;
+    animation: leftSlide 0.3s;
+    animation-timing-function: ease-in-out;
+}
+#menuButton{
+    height: 40px;
+    width: 40px;
+    border: 3px solid;
+    border-color: white;
+    float: right;
+    margin: 10px;
+    text-align: center;
+}
+#line{
+    height: 3px;
+    width: calc(100% - 10px);
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    float: left;
+    margin: 5px;
+}

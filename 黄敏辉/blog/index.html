@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>辉の博客</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="animation.css">
+        <link rel="stylesheet" type="text/css" href="media.css">
+        <link rel="stylesheet" type="text/css" href="kanban.css">
+        <style type="text/css"></style>
+    </head>
+    <body>
+        <div id="head">
+            <a href="index.html">辉の博客</a>
+            <div id="menuButton" onclick="fadeTo(menu)">
+                <div id="line"></div>
+                <div id="line"></div>
+                <div id="line"></div>
+            </div>
+            <ul id="menu">
+                <li><a href="#">HOMR</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li id="kanbanButton"><a onclick="look()">想看我可爱的看板娘吗</a></li>
+            </ul>
+        </div>
+        <div id="container">
+            <!-- 123 -->
+            <div id="body">
+                <div id="part1" class="part">
+                    <h1>123</h1>
+                    <p>as32d153asd13as1d1111111111111hs<!-- <a>1</a> -->u shua shi shi shi shil shli balufk lsfukha aldhf auldhf aluhdf halu 111111111111111111111111111111111</p>
+                    <date>2017年11月18日</date>
+                </div>
+                <div id="part2" class="part">
+                    <h1>123</h1>
+                    <p>as32d153asd13as1d1111111111111hsu shua shi shi shi shil shli balufk lsfukha aldhf auldhf aluhdf halu 111111111111111111111111111111111</p>
+                    <date>2017年11月18日</date>
+                </div>
+                <div id="part3" class="part">
+                    <h1>123</h1>
+                    <p>as32d153asd13as1d1111111111111hsu shua shi shi shi shil shli balufk lsfukha aldhf auldhf aluhdf halu 111111111111111111111111111111111</p>
+                    <date>2017年11月18日</date>
+                </div>
+                <div id="part4" class="part">
+                    <h1>123</h1>
+                    <p>as32d153asd13as1d1111111111111hsu shua shi shi shi shil shli balufk lsfukha aldhf auldhf aluhdf halu 111111111111111111111111111111111</p>
+                    <date>2017年11月18日</date>
+                </div>
+            </div>
+            <div id="" class="rightBody">
+                <h2>好像还要有搜索功能</h2>
+                <input type="text" name="search"><button onclick="alert('这功能不存在的')">搜索</button>
+            </div>
+            <div id="" class="rightBody">
+                <h2>留言板</h2>
+                <p>这博客真的好简陋啊。。。</p>
+            </div>
+        </div>
+        <!-- <div style="text-align: center;">超级简陋，只有样式。（连接什么的不存在的）</div> -->
+        <a id="goTop" href="#head">TOP</a>
+        <div id="kanban" oncontextmenu="return false"; onselect="return false"; ondrag="return false">
+            <img src="kanban\0.png" width="150" usemap="#kanbanMap" ismap onclick="kanbanSay(kanbanBody)">
+            <map id="kanbanMap">
+                <area shape="poly" coords="78,21, 26,35, 31,83, 53,104, 94,104, 124,83, 129,37" onclick="kanbanSay(kanbanHead)">
+                <area shape="poly" coords="52,117, 99,118, 96,140, 55,145" onclick="kanbanSay(kanbanOppai)">
+                <area shape="poly" coords="66,205, 93,207, 91,226, 66,227" onclick="kanbanSay(kanbanH)">
+            </map>
+        </div>
+        <div id="dialog">盯~~~~~~~</div>
+        <script src="kanban.js"></script>
+        <script>
+            window.onscroll = function (){
+                var t = window.pageYOffset;
+                goTop = document.getElementById("goTop");
+                if (t >= 100) {
+                    goTop.style.display = "block";
+                }else{
+                    goTop.style.display = "none";
+                }
+            }
+            function fadeTo(id){
+                if (id.style.display == "block") {
+                    id.style.animation = "fadeIn 0.3s";
+                    window.setTimeout(function(){id.style.display = "none"}, 300);
+                }else{
+                    id.style.display = "block";
+                    id.style.animation = "fadeOut 0.3s";
+                    id.style.opacity = 1;
+                }
+            }
+            console.log(document.getElementById("kanban").style);
+            console.log(window.screen.width);
+        </script>
+    </body>
+</html>
