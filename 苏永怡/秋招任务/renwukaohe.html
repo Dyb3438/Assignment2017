@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en" xmlns:http="8">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    </head>
+<body style="background-image:url(8.jpg);background-size:cover;background-repeat:no-repeat;">
+<script type="text/javascript">
+    function my_apply(){
+        window.open("apply.php");
+    }
+    function check() {
+        var name = document.form2.id.value;
+        if (name == "") {
+            window.alert("用户名不能留空");
+            return false;
+        }
+    }
+    function submit(){
+            document.form2.submit();
+    }
+</script>
+<style type="text/css">
+.box1{
+    margin-top: 54px;
+    margin-left: -200px;
+    width: 200px;
+    height:50px;
+    border:1px solid black;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    font-family: "Palatino Linotype";
+}
+.box2{
+    margin-top:-52px;
+    margin-left: 400px;
+    width: 200px;
+    height:50px;
+    border:1px solid black;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    font-family: "Palatino Linotype";
+}
+.box1:hover {
+    box-shadow: -3px -3px 5px 0 inset,
+                 1px 1px 2.5px 0 inset;
+}
+.box2:hover {
+    box-shadow: -3px -3px 5px 0 inset,
+                 1px 1px 2.5px 0 inset;
+}
+</style>
+<center>
+    <p style="margin-top:33px"><span style="color:#FF4500;font-size:35px;">登录页面</span></p>
+<form name="form2" method="post" action="ClientCheck.php" onsubmit="return check()">
+<table style=" padding-top: 40px; font-size:20px">
+    <tr >
+        <td>
+            <span style="color:#FF4500">
+            用户名：
+            </span>
+        </td>
+        <td>
+            <input type="text" name="id" style="font-size:20px">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span style="color:#FF4500;">
+                密码：
+            </span>
+        </td>
+        <td>
+            <input style="margin-top:10px;font-size:20px" type="password" name="password">
+        </td>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <input type="text" name="code" style="margin-top:10px;font-size:20px">
+        </td>
+            <td>
+                <img src="code.php" onclick="src='code.php'" style="margin-top:10px;">
+            </td>
+    </tr>
+    </tr>
+</table>
+</form>
+<div class="box1" onclick="submit()">登录</div>
+<div class="box2" onclick="my_apply()">注册</div>
+</center>
+</body>
+</html>

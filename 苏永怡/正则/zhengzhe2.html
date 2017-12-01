@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function check() {
+        var div=document.getElementById('output');
+        var text = document.getElementById("text").value;
+        var pattern1 =/^[1-9]([0-9]{8,9})(@qq.com)/g;
+        var pattern2=/\$[1-9]([0-9]*)(\.[0-9]{2})?|[1-9]([0-9]*)(\.[0-9]{2})?(美元)/g;
+        var pattern3=/^(20)[0-1][0-9][0-9]{8}/g;
+        if(text.match(pattern1)!=null){
+            div.innerHTML="此为qq邮箱";
+        }else if(text.match(pattern2)!=null){
+            div.innerHTML="此为美元价格";
+        }else if(text.match(pattern3)!=null){
+            div.innerHTML="此为华工学号";
+        }else{
+            div.innerHTML="";
+        }
+    }
+</script>
+<style type="text/css">
+</style>
+<body>
+<div class="text">
+    <input type="text" id="text" value="">
+</div>
+<div class="button">
+    <input type="button" value="判断" onclick="check()">
+</div >
+<div id="output" class="output">
+</div>
+</body>
+</html>
