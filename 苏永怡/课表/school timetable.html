@@ -1,0 +1,187 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>课表查询</title>
+</head>
+<body>
+<div style="display:none;position:absolute;z-index: -1">
+<span class="formbox">
+		<table id="Table6" class="blacktab" rules="all" border="1" height="132" width="100%">
+	<tbody><tr>
+	<td colspan="2"  width="2%">时间</td><td align="Center" width="14%">星期一</td><td align="Center" width="14%">星期二</td><td align="Center" width="14%">星期三</td><td align="Center" width="14%">星期四</td><td align="Center" width="14%">星期五</td><td align="Center" width="14%">星期六</td><td align="Center" width="14%">星期日</td>
+	</tr><tr>
+	<td colspan="2">早晨</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr><tr>
+	<td rowspan="4" width="1%">上午</td><td width="1%">第1节</td><td align="Center" rowspan="2" width="7%">复变函数Ⅰ<br>1-11,14-18(1,2)<br>鲍江宏<br>博学410<br></td><td align="Center" rowspan="2" width="7%">模拟电子技术实验<br>1-11,14-18(1,2)<br>甘伟明<br> <br></td><td align="Center" rowspan="2" width="7%">数字电子技术Ⅱ<br>1-11,14-18(1,2)<br>刘汉华<br>博学211<br></td><td align="Center" width="7%">&nbsp;</td><td align="Center" rowspan="2" width="7%">数字电子技术Ⅱ<br>1-11,14-18(1,2)<br>刘汉华<br>博学211<br></td><td align="Center" width="7%">&nbsp;</td><td align="Center" width="7%">&nbsp;</td>
+	</tr><tr>
+	<td>第2节</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr><tr>
+	<td>第3节</td><td align="Center" rowspan="2">大学物理Ⅲ(二)<br>1-11,14-18(3,4)<br>卢义刚<br>博学505<br></td><td align="Center" rowspan="2">模拟电子技术实验<br>1-11,14-18(3,4)<br>甘伟明<br> <br></td><td align="Center" rowspan="2">大学物理Ⅲ(二)<br>1-11,14-18(3,4)<br>卢义刚<br>博学505<br></td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr><tr>
+	<td>第4节</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr><tr>
+	<td rowspan="4" width="1%">下午</td><td>第5节</td><td align="Center" rowspan="4">模拟电子技术Ⅱ<br>1-11,14-18(5,8)<br>晋建秀<br>博学402<br></td><td align="Center">&nbsp;</td><td align="Center" rowspan="3">模拟电子技术Ⅱ<br>1-11,14-18(5,7)<br>晋建秀<br>博学402<br></td><td align="Center" rowspan="2">数字电子技术实验<br>4-10双,14-16双(5,6)<br>吕毅恒<br> <br></td><td align="Center" rowspan="2">电路实验<br>1-11单,15-17单(5,6)<br>黄晓梅<br> <br></td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr><tr>
+	<td>第6节</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr><tr>
+	<td>第7节</td><td align="Center">&nbsp;</td><td align="Center" rowspan="2">数字电子技术实验<br>4-10双,14-16双(7,8)<br>吕毅恒<br> <br></td><td align="Center" rowspan="2">电路实验<br>1-11单,15-17单(7,8)<br>黄晓梅<br> <br></td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr><tr>
+	<td>第8节</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr><tr>
+	<td rowspan="3" width="1%">晚上</td><td>第9节</td><td align="Center">&nbsp;</td><td align="Center" rowspan="3">毛泽东思想和中国特色社会主义理论体系概论<br>1-16(9,10,11)<br>李丽萍<br>博学306<br></td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr><tr>
+	<td>第10节</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr><tr>
+	<td>第11节</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td><td align="Center">&nbsp;</td>
+	</tr>
+	</tbody></table>
+
+		<table id="Table3" width="100%">
+			<tbody><tr>
+				<td class="trtitle" colspan="3">
+					<div align="left"><span id="lbl_bz"></span></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="trtitle" colspan="3"><div align="left">实践课(或无上课时间)信息：</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"><table class="datelist" cellspacing="0" cellpadding="3" border="0" id="DataGrid1" width="100%">
+	<tbody><tr class="datelisthead">
+	<td>课程名称</td><td>教师</td><td>学分</td><td>起止周</td><td>上课时间</td><td>上课地点</td>
+	</tr><tr>
+	<td>电子技术工程素质实践基础课</td><td>吕念玲</td><td>1.0</td><td>01-18</td><td>&nbsp;</td><td>&nbsp;</td>
+	</tr><tr class="alt">
+	<td>工程训练Ⅰ</td><td>王红飞</td><td>2.0</td><td>12-13</td><td>&nbsp;</td><td>&nbsp;</td>
+	</tr><tr>
+	<td>大学物理实验(二)</td><td>董有忠/周晓明/毛忠泉/池水莲/饶丹/王俊杰/叶晓靖/田仁玉</td><td>1.0</td><td>01-18</td><td>&nbsp;</td><td>&nbsp;</td>
+	</tr>
+	</tbody></table></td>
+			</tr>
+		</tbody></table>
+		<div align="left">
+			调、停（补）课信息：
+		</div>
+		<table class="datelist" cellspacing="0" cellpadding="3" border="0" id="DBGrid" width="100%">
+	<tbody><tr class="datelisthead">
+	<td>编号</td><td>课程名称</td><td>原上课时间地点</td><td>现上课时间地点</td><td>申请时间</td>
+	</tr>
+	</tbody></table>
+	</span>
+</div>
+<div style="position:absolute;z-index: 0;">
+    <span style="font-size:50px;color:red;padding-left:230px;">查课系统</br></span>
+</br>
+    <strong>
+    <span style="font-size:30px;color:gold;padding-left:50px;">时间：</span>
+    </strong>
+    <span style="font-size:30px;color:greenyellow;padding-left:50px;">Day：</span>
+    <select id="select1">
+        <option >Day</option>
+        <option value="2">Monday</option>
+        <option value="3">Tuesday</option>
+        <option value="4">Wednesday</option>
+        <option value="5">Thursday</option>
+        <option value="6">Friday</option>
+        <option value="7">Saturday</option>
+        <option value="8">Sunday</option>
+    </select>
+    <span style="font-size:30px;color:greenyellow;padding-left:50px;">Class：</span>
+    <select id="select2">
+        <option >Class</option>
+        <option value="9">第一节</option>
+        <option value="10">第二节</option>
+        <option value="11">第三节</option>
+        <option value="12">第四节</option>
+        <option value="13">第五节</option>
+        <option value="14">第六节</option>
+        <option value="15">第七节</option>
+        <option value="16">第八节</option>
+        <option value="17">第九节</option>
+        <option value="18">第十节</option>
+        <option value="19">第十一节</option>
+    </select>
+<div>
+    <input type="button" value="查询" style="width:200px;height:50px;margin-left:205px;margin-top:50px;font-size:30px;">
+</div>
+</div>
+</body>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+
+<script>
+    $("input:button").click(function() {
+        a=$("#select1").val();
+        b=$("#select2").val()-5;
+        //输入值，a为对应的列，b为对应的行
+        var arr =[];
+        for(var n=3;n<b;n++){
+            arr.push("Q"+n);
+        $("#Table6 tr:nth-child("+n+") td").each(function (key, value) {
+            arr.push($(this).attr('rowspan'));
+        });
+        }
+        //获取表格行数信息
+		var j=0;
+		for(var i=3;i<b;i++){
+            for (var x=0;x<arr.length;x++){
+                if(arr[x]=="Q"+i){
+                    var q=arr.slice(j, x);
+                    j=x;
+                    for (var d=1;d<q.length;d++){
+                        if(q[d]!=null&&(d-2)<=a&&q[d]>=(b-i+1)){
+                        a=a-1;
+						}
+					}
+				}
+			}
+		}
+		//调节单元格位置
+        val = $("#Table6").find("tr").eq(b-2).find("td").eq(a).text();
+		//以下是错行检验，为了找出合并行的科目
+for(var y=2;y<13;y++){
+        a_=$("#select1").val();
+        b_=$("#select2").val()-4-y;
+        //输入值，a为对应的列，b为往上y-1行
+	//以下重复上面工作
+        var arr_ =[];
+        for(var n_=3;n_<b_;n_++){
+            arr_.push("Q"+n_);
+            $("#Table6 tr:nth-child("+n_+") td").each(function (key, value) {
+                arr_.push($(this).attr('rowspan'));
+            });
+        }
+        //获取表格行数信息
+        var j_=0;
+        for(var i_=3;i_<b_;i_++){
+            for (var x_=0;x_<arr_.length;x_++){
+                if(arr_[x_]=="Q"+i_){
+                    var q_=arr_.slice(j_, x_);
+                    j_=x_;
+                    for (var d_=1;d_<q_.length;d_++){
+                        if(q_[d_]!=null&&(d_-2)<=a_&&q_[d_]>=(b_-i_+1)){
+                            a_=a_-1;
+                        }
+                    }
+                }
+            }
+        }
+        val2= $("#Table6").find("tr").eq(b_-2).find("td").eq(a_).attr('rowspan');
+        //获取上面行的合并情况
+        val3=$("#Table6").find("tr").eq(b_-2).find("td").eq(a_).text();
+        if (val2>=y){
+		    val=val3;
+		}
+}
+        if($("#select1").val()=="Day"||$("#select2").val()=="Class"){
+            alert('请选择日期');
+		}else{
+           alert(val);
+		}
+    });
+</script>
+</html>
