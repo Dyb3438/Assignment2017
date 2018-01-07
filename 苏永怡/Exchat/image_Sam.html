@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sam</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        .div{
+            psotion:absolute;
+            height:100%;
+            width:100%;
+        }
+        .window{
+            position:absolute;
+            margin-left:34%;
+            width:500px;
+            border:solid 5px red;
+        }
+
+        .respond{
+            width:422px;
+            height:19px;
+        }
+        .button{
+            position:absolute;
+            width:74px;
+            height:26px;
+            text-align:center;
+            font-size:20px;
+        }
+        .image{
+            border:1px solid black;
+            height:490px;
+            overflow:auto;
+        }
+    </style>
+    <script type="text/javascript">
+      function loadXMLDoc()
+        {
+            var xmlhttp;
+            if (window.XMLHttpRequest)
+            {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            var respond=document.getElementById("respond").value;
+            document.getElementById("respond").value="";
+            xmlhttp.open("GET","Sam_image.php?Sam="+respond,true);
+            xmlhttp.send();
+        }
+      var id = "0";
+      var t2 = window.setInterval("image()",100);
+      function image(){
+          var xmlhttp;
+          if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();
+          }
+          else
+          {// code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.open("POST","checkdb.php",true);
+          xmlhttp.send();
+          xmlhttp.onreadystatechange=function() {
+              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                  if(xmlhttp.responseText!=id){
+                      update(id);
+                      id=xmlhttp.responseText;
+                  }
+              }
+          }
+      }
+      function update(id){
+          var xmlhttp2;
+          if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp2=new XMLHttpRequest();
+          }
+          else
+          {// code for IE6, IE5
+              xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp2.open("GET","image.php?p="+id,true);
+          xmlhttp2.send();
+          xmlhttp2.onreadystatechange=function() {
+              if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
+                  var image=document.getElementById("image");
+                  var arr=new Array();
+                  var str=new Array();
+                  arr=xmlhttp2.responseText.split(",");
+                  var a=0;
+                  for (var i=0;i<(arr.length-6);i=i+6){
+                      str[a]=arr.slice(i,i+6);
+                      if(str[a][0]!=0) {
+                          image.innerHTML = image.innerHTML + "<center>" + str[a][5] + "</center>" +"Sam:<br>"+"&nbsp&nbsp&nbsp&nbsp"+str[a][0]+"<br>";
+                      }else{
+                          image.innerHTML = image.innerHTML + "<center>" + str[a][5] + "</center>" +"Tom:<br>"+"&nbsp&nbsp&nbsp&nbsp"+str[a][1]+"<br>";
+                      }
+                      a++;
+                  }
+                  console.log(str);
+                  image.scrollTop=image.scrollHeight;
+              }
+          }
+      }
+    </script>
+</head>
+<body>
+<h2 style="text-align:center">测试窗口Sam</h2>
+<div class="div">
+    <div class="window">
+        <div class="image" id="image">
+        </div>
+        <input class="respond" id="respond" onkeypress="if(event.keyCode==13){loadXMLDoc();}"></input>
+        <button class="button" type="button" onclick="loadXMLDoc()">Send</button>
+    </div>
+</div>
+</body>
+</html>
